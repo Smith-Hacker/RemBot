@@ -1,14 +1,15 @@
 const help = (prefix) => {
 	return `
+Oi.
 
-	
-	
-	> *Sticker Commands* <
-command : *${prefix}sticker* or *${prefix}stiker*
-desc : convert image/gif/video to sticker
-usage : reply image/gif/video, or send image/gif/video with caption\n
-command : *${prefix}sticker nobg* or *${prefix}stiker nobg*
-desc : convert image to sticker while removing the background
+╔═══  ʀᴇᴍʙᴏᴛ
+╟
+╠═ > *Sticker Commands* <
+╟command : *${prefix}sticker* or *${prefix}stiker*
+╟desc : convert image/gif/video to sticker
+╟usage : reply image/gif/video, or send image/gif/video with caption\n
+╟command : *${prefix}sticker nobg* or *${prefix}stiker nobg*
+╟desc : convert image to sticker while removing the background
 usage : reply image, or send image with caption\n
 command : *${prefix}toimg*
 desc : convert sticker to image
