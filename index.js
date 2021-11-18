@@ -120,15 +120,15 @@ async function starts() {
 				wait: '⌛ Sedang di Prosess ⌛',
 				success: '✔️ Berhasil ✔️',
 				error: {
-					stick: '❌ Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker ❌',
-					Iv: '❌ Link tidak valid ❌'
+					stick: 'Falha, ocorreu um erro ao converter a imagem em adesivo ❌',
+					Iv: 'Cor inválida❌'
 				},
 				only: {
-					group: '❌ Perintah ini hanya bisa di gunakan dalam group! ❌',
-					ownerG: '❌ Perintah ini hanya bisa di gunakan oleh owner group! ❌',
-					ownerB: '❌ Perintah ini hanya bisa di gunakan oleh owner bot! ❌',
-					admin: '❌ Perintah ini hanya bisa di gunakan oleh admin group! ❌',
-					Badmin: '❌ Perintah ini hanya bisa di gunakan ketika bot menjadi admin! ❌'
+					group: 'Este comando só pode ser usado em grupos! ❌',
+					ownerG: 'Este comando só pode ser usado pelo proprietário do grupo!',
+					ownerB: 'Hmm vejo que você não é meu dono, tente chamar o fnix na proxima vez. Este comando não esta disponível para plebe! ',
+					admin: 'Esse comando só pode ser usado por administradores de grupo! ❌',
+					Badmin: 'Eu preciso de admin para fazer isso!  ❌'
 				}
 			}
 
@@ -324,7 +324,7 @@ async function starts() {
 							})
 							.on('end', function () {
 								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata('BOT', authorname)} ${ran} -o ${ran}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('RemBot', authorname)} ${ran} -o ${ran}`, async (error) => {
 									if (error) return reply(mess.error.stick)
 									client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
 									fs.unlinkSync(media)	
@@ -351,11 +351,11 @@ async function starts() {
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`❌ Gagal, pada saat mengkonversi ${tipe} ke stiker`)
+								reply(`Falha ao converter ${tipe} em sticker`)
 							})
 							.on('end', function () {
 								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata('BOT', authorname)} ${ran} -o ${ran}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('RemBot', authorname)} ${ran} -o ${ran}`, async (error) => {
 									if (error) return reply(mess.error.stick)
 									client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
 									fs.unlinkSync(media)
@@ -379,12 +379,12 @@ async function starts() {
 							fs.unlinkSync(media)
 							let buffer = Buffer.from(res.base64img, 'base64')
 							fs.writeFileSync(ranp, buffer, (err) => {
-								if (err) return reply('Gagal, Terjadi kesalahan, silahkan coba beberapa saat lagi.')
+								if (err) return reply('Falha, ocorreu um erro, tente novamente mais tarde.')
 							})
 							exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
 								fs.unlinkSync(ranp)
 								if (err) return reply(mess.error.stick)
-								exec(`webpmux -set exif ${addMetadata('BOT', authorname)} ${ranw} -o ${ranw}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('RemBot', authorname)} ${ranw} -o ${ranw}`, async (error) => {
 									if (error) return reply(mess.error.stick)
 									client.sendMessage(from, fs.readFileSync(ranw), sticker, {quoted: mek})
 									fs.unlinkSync(ranw)
@@ -414,7 +414,7 @@ async function starts() {
 							.toFormat('webp')
 							.save(ran)*/
 					} else {
-						reply(`Kirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim`)
+						reply(`Envie uma imagem com a legenda ${prefix} sticker ou imagem marcada já enviada`)
 					}
 					break
 				case 'gtts':
@@ -544,7 +544,7 @@ async function starts() {
 					exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 						fs.unlinkSync(ranp)
 						if (err) return reply(mess.error.stick)
-						exec(`webpmux -set exif ${addMetadata('BOT', authorname)} ${rano} -o ${rano}`, async (error) => {
+						exec(`webpmux -set exif ${addMetadata('RemBot', authorname)} ${rano} -o ${rano}`, async (error) => {
 							if (error) return reply(mess.error.stick)
 							client.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
 							fs.unlinkSync(rano)
