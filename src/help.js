@@ -22,7 +22,7 @@ Por enquanto não faço muita coisa ツ_
 [ ${prefix}link]
 
 • _Marcar Todos_
-[ ${prefix}tagall]
+[ ${prefix}tagall]`
 }
 
 exports.help = help
