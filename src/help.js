@@ -3,6 +3,7 @@ const help = (prefix) => {
     _Oi, eu sou Rem ✨_
 _Por enquanto não faço muita coisa ツ_
 
+
   *> Comandos Disponiveis <*
 
 • _Sticker_
@@ -20,10 +21,10 @@ _Por enquanto não faço muita coisa ツ_
 > ${prefix}demote @usuario - Rebaixar a membro
 
 • _Link do Grupo_
-> ${prefix}link
+> ${prefix}link - Obtem o link do grupo
 
 • _Marcar Todos_
-> ${prefix}tagall
+> ${prefix}tagall - Marca todos os membros do grupo
 `
 }
 
