@@ -1,28 +1,30 @@
 const help = (prefix) => {
 	return `
-    _Oi, eu sou Rem ✨
+    _Oi, eu sou Rem ✨_
+_Por enquanto não faço muita coisa ツ_
 
-Por enquanto não faço muita coisa ツ_
-
-  *> Comandos Disponiveis<*
+  *> Comandos Disponiveis <*
 
 • _Sticker_
-[ ${prefix}sticker]
+> ${prefix}sticker - Responda a alguma foto/video/gif
 
 • _Boas Vindas_
-[ ${prefix}welcome 1 > Ativa | ${prefix}welcome 0 > Desativa]
+> ${prefix}welcome 1 - Ativa mensagem de boas vindas
+> ${prefix}welcome 0 - Desativa mensagem de boas vindas
 
 • _Ban_
-[ ${prefix}kick]
+> ${prefix}kick @usuario - Expulsa um usuário do grupo
 
 • _Promover/Rebaixar_
-[ ${prefix}promote@usuario > promover a admin | ${prefix}demote @usuario > rebaixar a membro]
+> ${prefix}promote @usuario - Promover a admin
+> ${prefix}demote @usuario - Rebaixar a membro
 
 • _Link do Grupo_
-[ ${prefix}link]
+> ${prefix}link
 
 • _Marcar Todos_
-[ ${prefix}tagall]`
+> ${prefix}tagall
+`
 }
 
 exports.help = help
